@@ -1,5 +1,6 @@
 // Classe que cria e gerencia as listas da tela principal
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shareon/item_listas/lista_main.dart';
 
@@ -29,6 +30,7 @@ lista_main_builder() {
         ),
         margin: EdgeInsets.all(6),
         child: Row(
+          mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             _img(),
             Expanded(
@@ -79,8 +81,13 @@ _img() {
         topRight: Radius.zero,
         bottomRight: Radius.zero,
         bottomLeft: Radius.circular(16)),
-    child: Image.network(
-      "https://f4.bcbits.com/img/a2101231758_10.jpg",
+    child: Container(
+      child: Image.network(
+        "https://cdn.thewirecutter.com/wp-content/uploads/2018/06/cataccessories-lowres-2x1-05916.jpg",
+        height: 150,
+        width: 150,
+        fit: BoxFit.cover,
+      ),
     ),
   );
 }
