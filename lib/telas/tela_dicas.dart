@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shareon/utils/drawer_builder.dart';
-import 'package:shareon/utils/shareon_appbar.dart';
 
 class TelaDicas extends StatefulWidget {
   @override
@@ -12,15 +10,13 @@ class _TelaDicasState extends State<TelaDicas> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _home(),
+      body: homeDicas(),
     );
   }
 }
 
-_home() {
+homeDicas() {
   return Scaffold(
-    appBar: shareon_appbar(),
-    drawer: DrawerList(),
     body: Container(
       color: Colors.grey[300],
       child: Center(
