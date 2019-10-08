@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:shareon/utils/drawer_builder.dart';
-import 'package:shareon/utils/shareon_appbar.dart';
+import 'package:shareon/telas/tela_main.dart';
 import 'package:shareon/utils/texts.dart';
 
 class TelaFAQ extends StatefulWidget {
@@ -10,19 +9,18 @@ class TelaFAQ extends StatefulWidget {
   _TelaFAQState createState() => _TelaFAQState();
 }
 
+
 class _TelaFAQState extends State<TelaFAQ> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _home(),
+      body: homeFAQ(),
     );
   }
 }
 
-_home() {
+homeFAQ() {
   return Scaffold(
-    appBar: shareon_appbar(),
-    drawer: DrawerList(),
     body: SizedBox.expand(
       child: Container(
         color: Colors.grey[300],
