@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shareon/telas/tela_main.dart' as prefix0;
+import 'package:shareon/telas/home.dart';
 
 
 void main() => runApp(MyApp());
@@ -15,7 +15,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(primaryColor: Colors.indigo),
-        home: prefix0.TelaMain(),
+        home: Home(),
     );
   }
 }
