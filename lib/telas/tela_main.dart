@@ -1,5 +1,8 @@
+import 'package:aplicativo_shareon/layout_listas/lista_main_builder.dart';
+import 'package:aplicativo_shareon/utils/drawer_builder.dart';
+import 'package:aplicativo_shareon/utils/shareon_appbar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shareon/layout_listas/lista_main_builder.dart';
 
 class TelaMain extends StatefulWidget {
   @override
@@ -10,21 +13,24 @@ class _TelaMainState extends State<TelaMain> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: homeMain(),
+      body: _home(),
     );
   }
 }
 
-homeMain() {
-  return Container(
-    color: Colors.white,
-    child: Scaffold(
-      body: Column(
+_home() {
+  return Scaffold(
+    // Navigation Drawer
+    drawer: DrawerList(),
+    appBar: shareon_appbar(),
+    body: Container(
+      color: Colors.white,
+      child: Column(
         children: <Widget>[
           Container(
             padding: EdgeInsets.all(10),
             height: 50,
-            color: Colors.indigo,
+            color: Color.fromARGB(255, 3, 50, 92),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -91,7 +97,7 @@ _icPesquisar() {
 
 _icGPS() {
   return Icon(
-    Icons.location_on,
+    Icons.edit_location,
     color: Colors.white,
     size: 30.0,
     semanticLabel: 'Set Location',

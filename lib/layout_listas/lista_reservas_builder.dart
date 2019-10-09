@@ -1,10 +1,8 @@
 // Classe que cria e gerencia as listas da tela principal
 
+import 'package:aplicativo_shareon/item_listas/lista_reservas.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shareon/item_listas/lista_favoritos.dart';
-import 'package:shareon/item_listas/lista_main.dart';
-import 'package:shareon/item_listas/lista_reservas.dart';
 
 lista_reservas_builder() {
   List<Widget> _lista_reservas = [
@@ -113,7 +111,7 @@ _textNome() {
     style: TextStyle(
       fontWeight: FontWeight.bold,
       fontSize: 26,
-      color: Colors.indigo,
+      color: Color.fromARGB(255, 3, 50, 92),
     ),
   );
 }
