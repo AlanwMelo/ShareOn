@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shareon/item_listas/lista_main.dart';
+import 'package:shareon/telas/produto_selecionado.dart';
 
 lista_main_builder() {
   List<Widget> _lista_main = [
@@ -23,53 +24,62 @@ lista_main_builder() {
     itemCount: _lista_main.length,
     itemExtent: 150,
     itemBuilder: (BuildContext context, int index) {
-      return Container(
-        decoration: BoxDecoration(
-          color: Colors.grey[200],
-          borderRadius: BorderRadius.all(Radius.circular(16)),
-        ),
-        margin: EdgeInsets.all(6),
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            _img(),
-            Expanded(
-              child: Container(
+      return GestureDetector(
+        onTap: () => _OnClick(context),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.grey[200],
+            borderRadius: BorderRadius.all(Radius.circular(16)),
+          ),
+          margin: EdgeInsets.all(6),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[
+              _img(),
+              Expanded(
+                child: Container(
+                  padding: EdgeInsets.all(12),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      _textNome(),
+                      Row(
+                        children: <Widget>[
+                          _textMedia(),
+                          _iconEstrela(),
+                        ],
+                      ),
+                      Row(
+                        children: <Widget>[
+                          _textDistancia(),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
                 padding: EdgeInsets.all(12),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
-                    _textNome(),
-                    Row(
-                      children: <Widget>[
-                        _textMedia(),
-                        _iconEstrela(),
-                      ],
-                    ),
-                    Row(
-                      children: <Widget>[
-                        _textDistancia(),
-                      ],
-                    ),
+                    _textPreco(),
                   ],
                 ),
               ),
-            ),
-            Container(
-              padding: EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: <Widget>[
-                  _textPreco(),
-                ],
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       );
     },
   );
+}
+
+_OnClick(BuildContext context) {
+  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+    return ProdutoSelecionado();
+  }));
 }
 //objetos
 
@@ -132,7 +142,7 @@ _textPreco() {
   );
 }
 
-_iconEstrela(){
+_iconEstrela() {
   return Icon(
     Icons.star,
     color: Colors.black,
