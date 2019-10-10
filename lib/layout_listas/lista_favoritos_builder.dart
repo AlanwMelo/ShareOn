@@ -117,7 +117,7 @@ _icFavoritos() {
 }
 _textPreco() {
   return Text(
-    "45,00",
+    "R\$ 45,00",
     style: TextStyle(
       fontWeight: FontWeight.bold,
       fontSize: 18,

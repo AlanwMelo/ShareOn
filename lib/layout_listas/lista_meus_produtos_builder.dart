@@ -2,26 +2,20 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shareon/item_listas/lista_main.dart';
+import 'package:shareon/item_listas/lista_historico.dart';
 import 'package:shareon/telas/produto_selecionado.dart';
 
-lista_main_builder() {
-  List<Widget> _lista_main = [
-    lista_main(),
-    lista_main(),
-    lista_main(),
-    lista_main(),
-    lista_main(),
-    lista_main(),
-    lista_main(),
-    lista_main(),
-    lista_main(),
-    lista_main(),
-    lista_main(),
+lista_meus_produtos_builder() {
+  List<Widget> _lista_historico = [
+    lista_historico(),
+    lista_historico(),
+    lista_historico(),
+    lista_historico(),
+    lista_historico(),
   ];
 
   return ListView.builder(
-    itemCount: _lista_main.length,
+    itemCount: _lista_historico.length,
     itemExtent: 150,
     itemBuilder: (BuildContext context, int index) {
       return GestureDetector(
@@ -52,7 +46,7 @@ lista_main_builder() {
                       ),
                       Row(
                         children: <Widget>[
-                          _textDistancia(),
+                          _textPreco(),
                         ],
                       ),
                     ],
@@ -62,9 +56,20 @@ lista_main_builder() {
               Container(
                 padding: EdgeInsets.all(12),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
-                    _textPreco(),
+                    _textData(),
+                    Expanded(
+                      child: Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: <Widget>[
+                            _iconDeletar(),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -77,7 +82,7 @@ lista_main_builder() {
 }
 
 _OnClick(BuildContext context) {
-  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
     return ProdutoSelecionado();
   }));
 }
@@ -92,7 +97,7 @@ _img() {
         bottomLeft: Radius.circular(16)),
     child: Container(
       child: Image.network(
-        "https://cdn.thewirecutter.com/wp-content/uploads/2018/06/cataccessories-lowres-2x1-05916.jpg",
+        "https://i.pinimg.com/originals/4c/52/6c/4c526cae19d1a61136330865f93c8f1b.jpg",
         height: 150,
         width: 150,
         fit: BoxFit.cover,
@@ -122,12 +127,12 @@ _textMedia() {
   );
 }
 
-_textDistancia() {
+_textData() {
   return Text(
-    "400m",
+    "12/01/2019",
     style: TextStyle(
       fontWeight: FontWeight.bold,
-      fontSize: 18,
+      fontSize: 14,
     ),
   );
 }
@@ -147,5 +152,13 @@ _iconEstrela() {
     Icons.star,
     color: Colors.black,
     size: 20.0,
+  );
+}
+
+_iconDeletar() {
+  return Icon(
+    Icons.delete_forever,
+    color: Colors.red,
+    size: 30.0,
   );
 }

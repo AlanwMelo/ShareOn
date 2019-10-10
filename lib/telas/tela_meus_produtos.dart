@@ -1,23 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shareon/layout_listas/lista_reservas_builder.dart';
-import 'package:shareon/utils/texts.dart';
+import 'package:shareon/layout_listas/lista_meus_produtos_builder.dart';
 
-class TelaReservas extends StatefulWidget {
+class MeusProdutos extends StatefulWidget {
   @override
-  _TelaReservasState createState() => _TelaReservasState();
+  _MeusProdutosState createState() => _MeusProdutosState();
 }
 
-class _TelaReservasState extends State<TelaReservas> {
+class _MeusProdutosState extends State<MeusProdutos> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: homeReservas(),
-    );
+    return homeMeusProdutos();
   }
 }
 
-homeReservas() {
+homeMeusProdutos() {
   return Scaffold(
     body: Container(
       child: Column(
@@ -44,7 +41,7 @@ homeReservas() {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      _text("Reservas"),
+                      _text("Adicionar"),
                     ],
                   ),
                 ),
@@ -63,9 +60,8 @@ homeReservas() {
             ),
           ),
           Expanded(
-            child: lista_reservas_builder(),
-          )
-          ,
+            child: lista_meus_produtos_builder(),
+          ),
         ],
       ),
     ),
