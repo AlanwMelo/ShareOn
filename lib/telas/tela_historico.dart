@@ -1,7 +1,8 @@
+
+
+import 'package:aplicativo_shareon/layout_listas/lista_historico_builder.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shareon/layout_listas/lista_historico_builder.dart';
-import 'package:shareon/utils/texts.dart';
 
 class TelaHistorico extends StatefulWidget {
   @override

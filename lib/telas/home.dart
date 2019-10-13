@@ -1,15 +1,16 @@
+
+import 'package:aplicativo_shareon/telas/tela_chat.dart';
+import 'package:aplicativo_shareon/telas/tela_dicas.dart';
+import 'package:aplicativo_shareon/telas/tela_faq.dart';
+import 'package:aplicativo_shareon/telas/tela_favoritos.dart';
+import 'package:aplicativo_shareon/telas/tela_historico.dart';
+import 'package:aplicativo_shareon/telas/tela_main.dart';
+import 'package:aplicativo_shareon/telas/tela_meus_produtos.dart';
+import 'package:aplicativo_shareon/telas/tela_reservas.dart';
+import 'package:aplicativo_shareon/telas/tela_suporte.dart';
+import 'package:aplicativo_shareon/utils/shareon_appbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shareon/telas/tela_dicas.dart';
-import 'package:shareon/telas/tela_faq.dart';
-import 'package:shareon/telas/tela_favoritos.dart';
-import 'package:shareon/telas/tela_historico.dart';
-import 'package:shareon/telas/tela_main.dart';
-import 'package:shareon/telas/tela_chat.dart';
-import 'package:shareon/telas/tela_meus_produtos.dart';
-import 'package:shareon/telas/tela_reservas.dart';
-import 'package:shareon/telas/tela_suporte.dart';
-import 'package:shareon/utils/shareon_appbar.dart';
 
 import 'meu_perfil.dart';
 

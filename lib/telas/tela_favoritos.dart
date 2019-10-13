@@ -1,7 +1,8 @@
+
+
+import 'package:aplicativo_shareon/layout_listas/lista_favoritos_builder.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shareon/layout_listas/lista_favoritos_builder.dart';
-import 'package:shareon/utils/texts.dart';
 
 class TelaFavoritos extends StatefulWidget {
   @override

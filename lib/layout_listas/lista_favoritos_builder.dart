@@ -1,9 +1,10 @@
 // Classe que cria e gerencia as listas da tela principal
 
+
+
+import 'package:aplicativo_shareon/item_listas/lista_favoritos.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shareon/item_listas/lista_favoritos.dart';
-import 'package:shareon/item_listas/lista_main.dart';
 
 lista_favoritos_builder() {
   List<Widget> _lista_favoritos = [

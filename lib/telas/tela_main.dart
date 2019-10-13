@@ -1,5 +1,8 @@
+
+
+import 'package:aplicativo_shareon/layout_listas/lista_main_builder.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shareon/layout_listas/lista_main_builder.dart';
 
 class TelaMain extends StatefulWidget {
   @override

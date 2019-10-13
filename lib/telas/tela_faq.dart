@@ -1,8 +1,8 @@
+
+
+import 'package:aplicativo_shareon/utils/texts.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:shareon/telas/tela_main.dart';
-import 'package:shareon/utils/texts.dart';
 
 class TelaFAQ extends StatefulWidget {
   @override
