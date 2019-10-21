@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shareon/layout_listas/lista_main_builder.dart';
+import 'package:shareon/telas/tela_map.dart';
 
 class TelaMain extends StatefulWidget {
   @override
@@ -7,15 +8,17 @@ class TelaMain extends StatefulWidget {
 }
 
 class _TelaMainState extends State<TelaMain> {
+  int mainControllerPointer = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: homeMain(),
+      body: homeMain(context),
     );
   }
 }
 
-homeMain() {
+homeMain(BuildContext context) {
   return Container(
     color: Colors.white,
     child: Scaffold(
@@ -39,12 +42,18 @@ homeMain() {
                     ),
                   ),
                 ),
-                Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      _icGPS(),
-                    ],
+                GestureDetector(
+                  onTap: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (BuildContext context) {
+                    return homeMapa();
+                  })),
+                  child: Container(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        _icGPS(),
+                      ],
+                    ),
                   ),
                 ),
                 Container(

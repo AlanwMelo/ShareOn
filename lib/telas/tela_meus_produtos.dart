@@ -1,23 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shareon/layout_listas/lista_favoritos_builder.dart';
-import 'package:shareon/utils/texts.dart';
+import 'package:shareon/layout_listas/lista_meus_produtos_builder.dart';
 
-class TelaFavoritos extends StatefulWidget {
+class MeusProdutos extends StatefulWidget {
   @override
-  _TelaFavoritosState createState() => _TelaFavoritosState();
+  _MeusProdutosState createState() => _MeusProdutosState();
 }
 
-class _TelaFavoritosState extends State<TelaFavoritos> {
+class _MeusProdutosState extends State<MeusProdutos> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: homeFavoritos(),
-    );
+    return homeMeusProdutos();
   }
 }
 
-homeFavoritos() {
+homeMeusProdutos() {
   return Scaffold(
     body: Container(
       child: Column(
@@ -44,7 +41,7 @@ homeFavoritos() {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      _text("Favoritos"),
+                      _text("Adicionar"),
                     ],
                   ),
                 ),
@@ -63,14 +60,14 @@ homeFavoritos() {
             ),
           ),
           Expanded(
-            child: lista_favoritos_builder(),
-          )
-          ,
+            child: lista_meus_produtos_builder(),
+          ),
         ],
       ),
     ),
   );
 }
+
 _icFiltros() {
   return Icon(
     Icons.filter_list,
