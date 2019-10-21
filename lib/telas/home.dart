@@ -1,4 +1,5 @@
 
+import 'package:aplicativo_shareon/models/usuario_model.dart';
 import 'package:aplicativo_shareon/telas/tela_chat.dart';
 import 'package:aplicativo_shareon/telas/tela_dicas.dart';
 import 'package:aplicativo_shareon/telas/tela_faq.dart';
@@ -11,6 +12,8 @@ import 'package:aplicativo_shareon/telas/tela_suporte.dart';
 import 'package:aplicativo_shareon/utils/shareon_appbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:scoped_model/scoped_model.dart';
+import 'package:aplicativo_shareon/utils/floatbutton.dart';
 
 import 'meu_perfil.dart';
 
@@ -28,6 +31,8 @@ class _HomeState extends State<Home> {
       drawer: _Drawer(),
       appBar: shareon_appbar(),
       body: homeController(),
+      floatingActionButton: FloatButton(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 
@@ -340,7 +345,7 @@ _img() {
     ),
     child: Container(
       child: Image.network(
-        "https://graph.facebook.com/2245836778831674/picture?type=large",
+        "https://cdn4.iconfinder.com/data/icons/instagram-ui-twotone/48/Paul-18-512.png",
         fit: BoxFit.cover,
       ),
     ),
@@ -348,23 +353,32 @@ _img() {
 }
 
 _textnome() {
-  return Text(
-    "Alan Willian",
-    style: TextStyle(
-      color: Colors.white,
-      fontSize: 25,
-      fontWeight: FontWeight.bold,
-    ),
+  return ScopedModelDescendant<UserModel>(
+    builder: (context, child, model){
+      return Text(
+        model.isLoggedIn() ? model.userData["nome"] : model.userData["nome"],
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 25,
+          fontWeight: FontWeight.bold,
+        ),
+      );
+    },
   );
 }
 
 _textemail() {
-  return Text(
-    "amelo967@gmail.com",
-    style: TextStyle(
-      color: Colors.white,
-      fontWeight: FontWeight.bold,
-    ),
+  return ScopedModelDescendant<UserModel>(
+    builder: (context, child, model){
+      return Text(
+        model.isLoggedIn() ? model.userData["email"] : model.userData["email"],
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 25,
+          fontWeight: FontWeight.bold,
+        ),
+      );
+    },
   );
 }
 

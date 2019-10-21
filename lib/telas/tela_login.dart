@@ -1,19 +1,27 @@
 import 'package:aplicativo_shareon/models/usuario_model.dart';
+import 'package:aplicativo_shareon/telas/home.dart';
 import 'package:aplicativo_shareon/telas/tela_main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'tela_CadastroUsuario.dart';
 
+class Login extends StatefulWidget {
+  @override
+  _LoginState createState() => _LoginState();
+}
 
+  class _LoginState extends State<Login> {
+  final emailController = TextEditingController();
+  final passController = TextEditingController();
 
-class Login extends StatelessWidget {
-
-  final formulario = GlobalKey<FormState>();
+  final campos = GlobalKey<FormState>();
+  final verificacao = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: verificacao,
         appBar: AppBar(
           title: Text("Entrar"),
           centerTitle: true,
@@ -25,12 +33,12 @@ class Login extends StatelessWidget {
               return Center(child: CircularProgressIndicator(),);
 
             return Form(
-              key: formulario,
+              key: campos,
               child: ListView(
                 padding: EdgeInsets.fromLTRB(16, 200, 16, 200),
                 children: <Widget>[
                   TextFormField(
-                      maxLines: 1,
+                      controller: emailController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         hintText: "E-mail",
@@ -51,7 +59,7 @@ class Login extends StatelessWidget {
                   ),
                   SizedBox(height: 16,),
                   TextFormField(
-                    maxLines: 1,
+                    controller: passController,
                     obscureText: true,
                     decoration: InputDecoration(
                         hintText: "Senha",
@@ -72,7 +80,26 @@ class Login extends StatelessWidget {
                   ),
                   Align(
                     alignment: Alignment.centerRight,
-                    child: FlatButton(onPressed: (){},
+                    child: FlatButton(onPressed: (){
+                      if(emailController.text.isEmpty)
+                        verificacao.currentState.showSnackBar(
+                            SnackBar(content: Text("Insira seu e-mail para recuperação"),
+                              backgroundColor: Colors.redAccent,
+                              duration: Duration(seconds: 2),
+                            )
+                        );
+                      else {
+                        model.recoverPass(emailController.text);
+                        verificacao.currentState.showSnackBar(
+                            SnackBar(content: Text("Um e-mail de confirmação foi enviado no seu endereço de e-mail."),
+                              backgroundColor: Theme
+                                  .of(context)
+                                  .primaryColor,
+                              duration: Duration(seconds: 2),
+                            )
+                        );
+                      }
+                    },
                       child: Text("Esqueci minha senha",
                         textAlign: TextAlign.right,
                       ),
@@ -92,15 +119,13 @@ class Login extends StatelessWidget {
                       color: Theme.of(context).primaryColor,
                       onPressed: (){
 
-                        model.signIn();
+                        if(campos.currentState.validate()){}
 
-
-                        if(formulario.currentState.validate()){
-
-                        }
-
-                        Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(builder: (context)=>TelaMain())
+                        model.signIn(
+                            email: emailController.text,
+                            pass: passController.text,
+                            onSuccess: _onSuccess,
+                            onFail: _onFail
                         );
                       },
                     ),
@@ -127,4 +152,20 @@ class Login extends StatelessWidget {
         )
     );
   }
+
+  void _onSuccess(){
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>Home()));
+
+  }
+
+  void _onFail(){
+    verificacao.currentState.showSnackBar(
+        SnackBar(content: Text("Falha ao entrar!"),
+          backgroundColor: Colors.redAccent,
+          duration: Duration(seconds: 2),
+        )
+    );
+  }
+
 }
+

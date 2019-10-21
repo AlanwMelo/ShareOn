@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:aplicativo_shareon/models/usuario_model.dart';
+import 'package:aplicativo_shareon/telas/home.dart';
+import 'package:aplicativo_shareon/telas/tela_main.dart';
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 
@@ -143,7 +145,9 @@ class _CadastroUsuarioState extends State<CadastroUsuario> {
         )
     );
     Future.delayed(Duration(seconds: 2)).then((_){
-      Navigator.of(context).pop();
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context)=>Home())
+      );
     });
   }
 

@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "29860976829",
-    "firebase_url": "https://share-d45d8.firebaseio.com",
-    "project_id": "share-d45d8",
-    "storage_bucket": "share-d45d8.appspot.com"
+    "project_number": "975761612516",
+    "firebase_url": "https://shareon.firebaseio.com",
+    "project_id": "shareon",
+    "storage_bucket": "shareon.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:29860976829:android:1c05296d087270b3f9ffd4",
+        "mobilesdk_app_id": "1:975761612516:android:19b0471df79c825aaed6f1",
         "android_client_info": {
           "package_name": "shareon.tcc.com.br.aplicativo_shareon"
         }
       },
       "oauth_client": [
         {
-          "client_id": "29860976829-1ms88oafh353sk035c3gi3v1cbm9fbt7.apps.googleusercontent.com",
+          "client_id": "975761612516-i9cs1ig06pno70de8s3qpg7barnem3oe.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "shareon.tcc.com.br.aplicativo_shareon",
-            "certificate_hash": "40319286b9cb2b5a777af1a1255c010a539bae44"
+            "certificate_hash": "f8e98790fa0bc1ac4dca40b7180a67c733383a49"
           }
         },
         {
-          "client_id": "29860976829-fvla0act8hmama9jv6gg0old15fm7r8c.apps.googleusercontent.com",
+          "client_id": "975761612516-vbj9obe956m4pb010rdit37lbpfs2g9u.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAkzTPPjyPM1us70P_RJQtdAUJOyWH9Rl8"
+          "current_key": "AIzaSyDAVrOzCfJOoak50Fke6jDdW945_s6rv4U"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "29860976829-fvla0act8hmama9jv6gg0old15fm7r8c.apps.googleusercontent.com",
+              "client_id": "975761612516-vbj9obe956m4pb010rdit37lbpfs2g9u.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

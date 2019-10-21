@@ -1,8 +1,8 @@
-
-
+import 'package:aplicativo_shareon/models/usuario_model.dart';
 import 'package:aplicativo_shareon/utils/shareon_appbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 class MeuPerfil extends StatefulWidget {
   @override
@@ -15,79 +15,81 @@ class _MeuPerfilState extends State<MeuPerfil> {
     return _meu_perfil();
   }
 
-  Widget _meu_perfil() {
-    return Scaffold(
-      backgroundColor: Colors.indigo,
-      appBar: shareon_appbar(),
-      body: SizedBox.expand(
-        child: Container(
-          padding: EdgeInsets.all(16),
-          child: SingleChildScrollView(
-            child: Container(
-              child: Column(
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Expanded(
-                        child: Container(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: <Widget>[
-                              _iconEditar(),
-                            ],
+    Widget _meu_perfil() {
+      return Scaffold(
+        backgroundColor: Colors.indigo,
+        appBar: shareon_appbar(),
+        body: SizedBox.expand(
+          child: Container(
+            padding: EdgeInsets.all(16),
+            child: SingleChildScrollView(
+              child: Container(
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Container(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: <Widget>[
+                                _iconEditar(),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container (
+
+                      height: 200,
+                      child: _img(),
+                    ),
+
+                    Container(
+                      margin: EdgeInsets.only(top: 16),
+                      child: _text("Jessica Alice", Titulo: true),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 16),
+                      width: 70,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          _text("5.0"),
+                          _iconEstrela(),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 16,
+                      bottom: 16),
+                      child: _text("Avaliações:"),
+                    ),
+                    ConstrainedBox(
+                      constraints: BoxConstraints(
+                        minHeight: 40,
+                        minWidth: 1000,
+                      ),
+                      child: Container(
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.all(Radius.circular(16)),
+                          child: Container(
+                            padding: EdgeInsets.all(8),
+                            color: Colors.white,
+                            child: _text("Você ainda não possui avaliações.", Resumo: true),
                           ),
                         ),
                       ),
-                    ],
-                  ),
-                  Container (
-                    height: 200,
-                    child: _img(),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 16),
-                    child: _text("Jessica Alice martins", Titulo: true),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 16),
-                    width: 70,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        _text("5.0"),
-                        _iconEstrela(),
-                      ],
                     ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 16,
-                    bottom: 16),
-                    child: _text("Avaliações:"),
-                  ),
-                  ConstrainedBox(
-                    constraints: BoxConstraints(
-                      minHeight: 40,
-                      minWidth: 1000,
-                    ),
-                    child: Container(
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(16)),
-                        child: Container(
-                          padding: EdgeInsets.all(8),
-                          color: Colors.white,
-                          child: _text("Você ainda não possui avaliações.", Resumo: true),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
         ),
-      ),
-    );
-  }
+      );
+    }
 }
 
 _img() {
@@ -97,7 +99,7 @@ _img() {
     ),
     child: Container(
       child: Image.network(
-        "https://avatars2.githubusercontent.com/u/49197693?s=400&v=4",
+        "https://cdn4.iconfinder.com/data/icons/instagram-ui-twotone/48/Paul-18-512.png",
         fit: BoxFit.cover,
       ),
     ),
