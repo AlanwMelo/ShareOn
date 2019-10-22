@@ -1,9 +1,10 @@
 // Classe que cria e gerencia as listas da tela principal
 
+
+import 'package:aplicativo_shareon/item_listas/lista_main.dart';
+import 'package:aplicativo_shareon/telas/produto_selecionado.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shareon/item_listas/lista_main.dart';
-import 'package:shareon/telas/produto_selecionado.dart';
 
 lista_main_builder() {
   List<Widget> _lista_main = [
@@ -134,7 +135,7 @@ _textDistancia() {
 
 _textPreco() {
   return Text(
-    "45,00",
+    "R\$ 45,00",
     style: TextStyle(
       fontWeight: FontWeight.bold,
       fontSize: 18,

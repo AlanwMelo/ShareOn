@@ -3,14 +3,21 @@
 //
 
 #import "GeneratedPluginRegistrant.h"
-#import <path_provider/PathProviderPlugin.h>
-#import <sqflite/SqflitePlugin.h>
-
+#import <cloud_firestore/CloudFirestorePlugin.h>
+#import <firebase_auth/FirebaseAuthPlugin.h>
+#import <firebase_core/FirebaseCorePlugin.h>
+#import <firebase_storage/FirebaseStoragePlugin.h>
+#import <image_cropper/ImageCropperPlugin.h>
+#import <image_picker/ImagePickerPlugin.h>
+#import <url_launcher/UrlLauncherPlugin.h>
 @implementation GeneratedPluginRegistrant
-
 + (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
-  [FLTPathProviderPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTPathProviderPlugin"]];
-  [SqflitePlugin registerWithRegistrar:[registry registrarForPlugin:@"SqflitePlugin"]];
+  [FLTCloudFirestorePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTCloudFirestorePlugin"]];
+  [FLTFirebaseAuthPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseAuthPlugin"]];
+  [FLTFirebaseCorePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseCorePlugin"]];
+  [FLTFirebaseStoragePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseStoragePlugin"]];
+  [FLTImageCropperPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTImageCropperPlugin"]];
+  [FLTImagePickerPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTImagePickerPlugin"]];
+  [FLTUrlLauncherPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTUrlLauncherPlugin"]];
 }
-
 @end
